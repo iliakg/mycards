@@ -2,7 +2,7 @@ defmodule MycardsBackend.Accounts.Auth do
   @moduledoc """
   """
 
-  import Ecto.{Query, Changeset}, warn: false
+  import Ecto.{Changeset}, warn: false
 
   alias MycardsBackend.Repo
   alias MycardsBackend.Accounts.User
