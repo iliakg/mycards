@@ -10,6 +10,8 @@ defmodule MycardsBackend.Accounts.User do
     field(:password, :string, virtual: true)
     field(:password_confirmation, :string, virtual: true)
 
+    has_many :cards_sets, MycardsBackend.Cards.CardsSet
+
     timestamps()
   end
 
