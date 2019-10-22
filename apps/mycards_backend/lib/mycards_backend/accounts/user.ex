@@ -9,7 +9,7 @@ defmodule MycardsBackend.Accounts.User do
     field(:password_salt, :string)
     field(:password, :string, virtual: true)
 
-    has_many :cards_sets, MycardsBackend.Cards.CardsSet
+    has_many(:cards_sets, MycardsBackend.Cards.CardsSet)
 
     timestamps()
   end
