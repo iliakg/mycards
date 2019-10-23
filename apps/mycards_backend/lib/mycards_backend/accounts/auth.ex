@@ -11,17 +11,17 @@ defmodule MycardsBackend.Accounts.Auth do
   def register(email, username, password) do
     # require IEx; IEx.pry
     %User{}
-    |> User.changeset(%{email: email, username: username, password: password})
-    |> hash_password()
+    |> User.changeset(%{email: email, username: username})
+    |> hash_password(password)
     |> Repo.insert()
   end
 
-  defp hash_password(changeset) do
+  defp hash_password(changeset, password) do
     case changeset do
-      %Ecto.Changeset{valid?: true, changes: %{password: pass}} ->
+      %Ecto.Changeset{valid?: true} ->
         salt = Bcrypt.gen_salt(12, true)
         put_change(changeset, :password_salt, salt)
-        |> put_change(:encrypted_password, Bcrypt.Base.hash_password(pass, salt))
+        |> put_change(:encrypted_password, Bcrypt.Base.hash_password(password, salt))
 
       _ ->
         changeset

@@ -8,7 +8,7 @@ defmodule MycardsBackend.Repo.Migrations.Users do
       add(:encrypted_password, :string, null: false)
       add(:password_salt, :string, null: false)
 
-      timestamps
+      timestamps()
     end
 
     create(unique_index(:users, [:email], name: :unique_emails))

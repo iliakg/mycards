@@ -6,7 +6,7 @@ defmodule MycardsBackend.Repo.Migrations.CardsSets do
       add(:name, :string)
       add :user_id, references("users")
 
-      timestamps
+      timestamps()
     end
   end
 end
