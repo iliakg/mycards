@@ -7,7 +7,8 @@ defmodule MycardsBackend.Application do
     import Supervisor.Spec
 
     children = [
-      supervisor(MycardsBackend.Repo, [])
+      supervisor(MycardsBackend.Repo, []),
+      supervisor(MycardsBackend.Game.Supervisor, [])
     ]
 
     opts = [strategy: :one_for_one, name: MycardsBackend.Supervisor]

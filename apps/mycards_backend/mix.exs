@@ -20,7 +20,7 @@ defmodule MycardsBackend.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger, :ecto, :postgrex],
+      extra_applications: [:gproc, :logger, :ecto, :postgrex],
       mod: {MycardsBackend.Application, []}
     ]
   end
@@ -28,6 +28,7 @@ defmodule MycardsBackend.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:gproc, "~> 0.5.0"},
       {:ecto_sql, "~> 3.0"},
       {:postgrex, ">= 0.0.0"},
       {:bcrypt_elixir, "~> 2.0"}
