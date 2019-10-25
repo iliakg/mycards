@@ -1,9 +1,9 @@
 defmodule MycardsApiWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :mycards_api
 
-  socket "/socket", MycardsApiWeb.UserSocket,
-    websocket: true,
-    longpoll: false
+  # socket "/socket", MycardsApiWeb.UserSocket,
+  #   websocket: true,
+  #   longpoll: false
 
   # Serve at "/" the static files from "priv/static" directory.
   #

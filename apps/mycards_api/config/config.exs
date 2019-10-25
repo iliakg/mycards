@@ -11,7 +11,7 @@ use Mix.Config
 config :mycards_api, MycardsApiWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "GMzt1d+IPzm5ND1eUHkgz8Eygfa/f3LwgEcWXpAQzznWtM++unnncLQM2w30TPFI",
-  render_errors: [view: MycardsApiWeb.ErrorView, accepts: ~w(json)],
+  render_errors: [view: MycardsApiWeb.ErrorsView, accepts: ~w(json)],
   pubsub: [name: MycardsApi.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
