@@ -5,8 +5,8 @@ defmodule MycardsBackend.Game.Supervisor do
     Supervisor.start_link(__MODULE__, [], name: __MODULE__)
   end
 
-  def start_game(game_id) do
-    Supervisor.start_child(__MODULE__, [game_id])
+  def start_game(game_id, cards, opts \\ %{}) do
+    Supervisor.start_child(__MODULE__, [game_id, cards, opts])
   end
 
   def init(_) do
