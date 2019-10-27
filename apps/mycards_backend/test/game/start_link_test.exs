@@ -8,7 +8,7 @@ defmodule MycardsBackend.Game.StartLinkTest do
 
   @tag :deck
   test "init deck" do
-    {:ok, user} = Auth.register("test@gmail.com", "username", "password")
+    {:ok, user} = Auth.registration("test@gmail.com", "username", "password")
     {:ok, cards_set} = Cards.create_set(user, %{name: "testname"})
     cards = [
       %Card{front: "apple", back: "яблоко"},

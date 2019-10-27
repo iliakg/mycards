@@ -2,13 +2,13 @@ defmodule MycardsBackend.Game.DeckInitTest do
   use MycardsBackend.RepoCase
   doctest MycardsBackend
 
-  alias MycardsBackend.Accounts.Auth
-  alias MycardsBackend.Cards
-  alias MycardsBackend.Cards.Card
+  # alias MycardsBackend.Accounts.Auth
+  # alias MycardsBackend.Cards
+  # alias MycardsBackend.Cards.Card
 
   # @tag :deck
   # test "init deck" do
-  #   {:ok, user} = Auth.register("test@gmail.com", "username", "password")
+  #   {:ok, user} = Auth.registration("test@gmail.com", "username", "password")
   #   {:ok, cards_set} = Cards.create_set(user, %{name: "testname"})
   #   cards = [
   #     %Card{front: "apple", back: "яблоко"},

@@ -8,11 +8,10 @@ defmodule MycardsBackend.Accounts.Auth do
   alias MycardsBackend.Accounts
   alias MycardsBackend.Accounts.User
 
-  # MycardsBackend.Accounts.Auth.register("1", "2", "3")
-  def register(email, username, password) do
+  def registration(email, username, password) do
     # require IEx; IEx.pry
     %User{}
-    |> User.changeset(%{email: email, username: username})
+    |> User.changeset(%{email: email, username: username, password: password})
     |> hash_password(password)
     |> Repo.insert()
   end

@@ -12,7 +12,7 @@ defmodule MycardsBackend.CreateCardsTest do
 
   @tag :cards
   test "create cards" do
-    {:ok, user} = Auth.register("test@gmail.com", "username", "password")
+    {:ok, user} = Auth.registration("test@gmail.com", "username", "password")
     {:ok, cards_set} = Cards.create_set(user, %{name: "testname"})
 
     IO.inspect cards_set
