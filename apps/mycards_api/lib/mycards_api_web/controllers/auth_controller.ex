@@ -13,7 +13,8 @@ defmodule MycardsApiWeb.AuthController do
       {:error, _msg} ->
         conn
         |> put_status(:bad_request)
-        |> render(MycardsApiWeb.ErrorsView, "400.json")
+        |> put_view(MycardsApiWeb.ErrorsView)
+        |> render("400.json")
     end
   end
 
@@ -26,7 +27,8 @@ defmodule MycardsApiWeb.AuthController do
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
-        |> render(MycardsApiWeb.ErrorsView, "unprocessable_entity.json", errors: changeset.errors)
+        |> put_view(MycardsApiWeb.ErrorsView)
+        |> render("unprocessable_entity.json", errors: changeset.errors)
     end
   end
 end

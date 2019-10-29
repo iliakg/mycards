@@ -11,6 +11,9 @@ defmodule MycardsApiWeb.Router do
     post("/login", AuthController, :login)
     post("/registration", AuthController, :registration)
 
+    get("/profile", UsersController, :profile)
+    get("/users/:id/cards", UsersController, :cards)
+
     post("/games/:cards_set_id", GamesController, :create)
     post("/cards/accept", GamesController, :accept)
   end
