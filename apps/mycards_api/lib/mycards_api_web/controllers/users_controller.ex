@@ -6,7 +6,7 @@ defmodule MycardsApiWeb.UsersController do
   def profile(conn, _params) do
     conn
     |> put_status(:ok)
-    |> render("profile.json", %{})
+    |> render("profile.json", %{current_user: conn.assigns.current_user})
   end
 
   def cards(conn, _params) do
