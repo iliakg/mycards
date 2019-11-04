@@ -37,6 +37,7 @@ defmodule MycardsApi.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:mycards_backend, in_umbrella: true},
       {:phoenix, "~> 1.4.10"},
       {:phoenix_pubsub, "~> 1.1"},
       {:gettext, "~> 0.11"},
