@@ -9,6 +9,8 @@ defmodule MycardsBackend.Cards do
 
   def find_set_by_id(id), do: Repo.get!(CardsSet, id)
 
+  def find_sets_by_user_id(user_id), do: Repo.get_by(CardsSet, user_id: user_id)
+
   def create_set(user, params \\ %{}) do
     Ecto.build_assoc(user, :cards_sets, params)
     |> Repo.insert

@@ -19,14 +19,20 @@ defmodule MycardsApiWeb.ConnCase do
     quote do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
-      alias MycardsApiWeb.Router.Helpers, as: Routes
+      import MycardsApiWeb.Router.Helpers
 
       # The default endpoint for testing
       @endpoint MycardsApiWeb.Endpoint
     end
   end
 
-  setup _tags do
+  setup tags do
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(MycardsBackend.Repo)
+
+    unless tags[:async] do
+      Ecto.Adapters.SQL.Sandbox.mode(MycardsBackend.Repo, {:shared, self()})
+    end
+
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
 end
